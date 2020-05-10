@@ -1,0 +1,39 @@
+Mapping
+{/* {data &&
+    data.map(i => {
+    return (
+        <Card
+        onPress={() =>
+            navigation.navigate('ReminderScreen', {
+            data: i,
+            })
+        }
+        key={i.id}
+        data={i}
+        />
+    );
+    })} */}
+
+const {data, onPress} = props;
+console.log('data:', data);
+return you all data in forecast
+console.log('onPress:', onPress);
+return you onPress function
+
+return (   <TouchableOpacity onPress={onPress} style={styles.itemContainer}>
+<View style={styles.textContainer}>
+<Text style={styles.date}>{item.date}</Text>
+<Text style={styles.smallTemperature}>{item.temperature}</Text>
+<Text style={styles.weather}>{item.weather}</Text>
+</View>
+<View style={styles.iconContainer}>
+<WeatherPNG weather={item.weather} />
+</View>
+</TouchableOpacity>
+);
+
+const weatherToken = 'fe9d16537bf73d11bed1a2d34e92b5b9';
+const getCurrentUrl = city =>
+`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weatherToken}`;
+const getForecastUrl = city =>
+`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${weatherToken}`;
